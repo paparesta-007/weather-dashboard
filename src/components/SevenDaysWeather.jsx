@@ -55,7 +55,7 @@ const SeveDaysWeather = ({ weather }) => {
     }
 
     return (
-        <div className="card flex flex-wrap  items-center justify-evenly gap-5">
+        <div className="card flex flex-wrap  mt-2 items-center align-middle text-center justify-evenly gap-0">
             {days.map((day, index) => {
                 // Ottieni il codice meteo per il giorno corrente
                 const weatherCode = weatherCodes[index];
@@ -67,7 +67,7 @@ const SeveDaysWeather = ({ weather }) => {
                             <h1 className="font-bold text-white text-xl">{index == 0 ? "Today" : index == 1 ? "Tomorrow" : `${dayOfWeek} ${dayTime}`}</h1>
                             {/* Aggiungi l'icona basata sul codice meteo */}
                             <img
-                                src={`src/assets/animatedIcons/${icon}.svg`}
+                                src={`https://raw.githubusercontent.com/Makin-Things/weather-icons/main/static/${icon}.svg`}
                                 alt={`Weather icon for ${icon}`}
                                 className="weather-icon m-2 w-24"
                             />

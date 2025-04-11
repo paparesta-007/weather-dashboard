@@ -16,7 +16,7 @@ const MainCard = ({ weather }) => {
     const sunsetTime = weather.daily.sunset[0].slice(11, 16);
 
     return (
-        <div className="w-full p-6 my-2 h-auto rounded-lg bg-gradient-to-br card shadow-lg">
+        <div className="w-full p-6 my-4 h-auto rounded-lg bg-gradient-to-br card shadow-lg">
             {/* Main content */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left column */}

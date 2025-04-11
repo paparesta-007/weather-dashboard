@@ -33,7 +33,7 @@ const UvCard = ({weather}) => {
     }
 
     return (
-        <div className="card flex flex-col my-2 mr-1 gap-4 bg-white p-4 rounded-lg shadow-md md:w-[40%] w-full">
+        <div className="card flex flex-col my-2 mr-2 gap-4 bg-white p-4 rounded-lg  shadow-md md:w-[40%] w-full">
             <h2 className="text-lg flex justify-between font-semibold text-white">
                 <span>UV Index (Next 7 days)</span>
                 <CircleHelp data-tip="React-tooltip" className="cursor-pointer"

@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Loader from "./loader.jsx";
+import weatherCodeToIcon from "../assets/weatherCode.js";
 
-const OtherCities = ({ citiesWeather }) => {
+const OtherCities = ({citiesWeather}) => {
     const [weathers, setWeathers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -15,18 +16,28 @@ const OtherCities = ({ citiesWeather }) => {
     }, [weathers]);
 
     return (
-        <div className="md:w-[60%] w-full ml-1 my-2">
-            <h1 className="text-2xl card mb-1 rounded-md text-white">Other Cities</h1>
-            <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-2 sm:grid-cols-1 gap-1 items-center">
+        <div className="md:w-[60%] w-full my-2">
+            <h1 className="text-2xl card  mb-1 mx-2 px-4 py-2 rounded-md text-white">Other Cities</h1>
+            <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-2 sm:grid-cols-1  items-center">
                 {isLoading ? (
-                    <Loader />
+                    <Loader/>
                 ) : (
                     weathers.map((weather, index) => (
-                        <div key={index} className="card rounded-md">
-                            <h2 className="text-white">{weather.city}</h2>
-                            <p className="text-white">{weather.currentTemp}</p>
-                            <p className="text-white">{weather.maxTemp}</p>
-                            <p className="text-white">{weather.minTemp}</p>
+                        <div key={index} className="card p-4 mx-2 my-2 flex items-center justify-between  rounded-md">
+                            <div>
+                                <h2 className="text-white text-2xl">{weather.city}</h2>
+                                <hr className="mt-1"/>
+                                <p className="text-white">{weather.currentTemp}°C</p>
+                                <p className="text-gray-400">Max: {weather.maxTemp}°C</p>
+                                <p className="text-gray-400">Min{weather.minTemp}°C</p>
+                            </div>
+                            <div>
+                                <img
+                                    src={`https://raw.githubusercontent.com/Makin-Things/weather-icons/main/static/${weatherCodeToIcon[weather.weatherCode]}.svg`}
+                                    alt={weather.city}
+                                    className="w-24"
+                                />
+                            </div>
                         </div>
                     ))
                 )}

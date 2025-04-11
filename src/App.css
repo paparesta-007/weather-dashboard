@@ -22,3 +22,7 @@ body{
 hr{
     border: 1px solid rgba(154, 148, 148, 0.3);
 }
+::selection {
+    background: #b3a66c;
+    color: black; /* Optional: change text color for contrast */
+}

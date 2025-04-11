@@ -65,7 +65,7 @@ function App() {
                         const {lat, lng} = geoData.results[0].geometry;
 
                         // Then get weather data
-                        const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=temperature_2m_max,temperature_2m_min&current=temperature_2m&timezone=auto`;
+                        const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=temperature_2m_max,weather_code,temperature_2m_min&current=temperature_2m&timezone=auto`;
                         const weatherResponse = await fetch(weatherUrl);
                         if (!weatherResponse.ok) throw new Error("Weather API failed");
 
@@ -76,6 +76,7 @@ function App() {
                             currentTemp: weatherData.current.temperature_2m,
                             maxTemp: weatherData.daily.temperature_2m_max[0],
                             minTemp: weatherData.daily.temperature_2m_min[0],
+                            weatherCode: weatherData.daily.weather_code[0]
                         };
                     } catch (error) {
                         console.error(`Error fetching data for ${city}:`, error);
@@ -114,7 +115,7 @@ function App() {
 
     return (
         <div className="h-screen flex flex-wrap border">
-            <div className="px-1 md:w-[40%] w-full">
+            <div className="pl-4 mt-2 md:w-[40%] w-full">
                 <SearchBar setSearchCity={setSearchCity} />
                 {isLoading ? (
                     <Loader />
@@ -125,13 +126,13 @@ function App() {
                     </>
                 )}
             </div>
-            <div className="px-1 mt-2 md:w-[60%] w-full">
+            <div className="px-4 mt-2 md:w-[60%] w-full">
                 {isLoading ? (
                     <Loader />
                 ) : (
                     <>
                         <SevenDaysWeather weather={weather} />
-                        <div className="flex md:flex-row flex-col">
+                        <div className="flex mt-2 md:flex-row flex-col">
                             <UvCard weather={weather} />
                             <OtherCities
                                 citiesWeather={otherCitiesWeather}

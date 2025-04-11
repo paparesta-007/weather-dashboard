@@ -1,0 +1,32 @@
+const weatherCodeToIcon = {
+    0: "clear-day",
+    1: "cloudy-1-day",
+    2: "cloudy-2-day",
+    3: "cloudy-3-day",
+    45: "fog-day",
+    48: "fog",
+    51: "rainy-1-day",
+    53: "rainy-2-day",
+    55: "rainy-3-day",
+    56: "frost-day",
+    57: "frost-night",
+    61: "rainy-1-day",
+    63: "rainy-2-day",
+    65: "rainy-3-day",
+    66: "frost-day",
+    67: "frost-night",
+    71: "snowy-1-day",
+    73: "snowy-2-day",
+    75: "snowy-3-day",
+    77: "snowy-1",
+    80: "rainy-1",
+    81: "rainy-2",
+    82: "rainy-3",
+    85: "snowy-2",
+    86: "snowy-3",
+    95: "thunderstorms",
+    96: "severe-thunderstorm",
+    99: "severe-thunderstorm"
+};
+
+export default weatherCodeToIcon;
