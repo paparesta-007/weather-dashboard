@@ -72,7 +72,10 @@ const MainCard = ({ weather, locationCity }) => {
     const oggi = new Date();
     const giornoSettimana = oggi.toLocaleString('en-US', { weekday: 'long' });
     const weatherDescription = weatherCodeToDescription[weather.current.weather_code] || "Unknown";
-
+    // 12 april
+    const now= new Date();
+    const month=now.toLocaleString('en-US', { month: 'long' });
+    const day=now.getDate();
     return (
         <div className="w-[100%] my-2 p-4 rounded-md card">
             <div className="flex items-center justify-start">
@@ -85,7 +88,7 @@ const MainCard = ({ weather, locationCity }) => {
             <div className="flex flex-col items-center mt-4 md:grid md:grid-cols-2 md:gap-4">
                 <div className="flex flex-col text-center md:items-start md:text-left w-full">
                     <h1 className="text-white text-3xl">{giornoSettimana}</h1>
-                    <p className="text-gray-400 text-[16px]">Current Temperature</p>
+                    <p className="text-gray-400 text-[16px]">{month} {day}</p>
                     <h1 className="text-white text-[60px] mt-4">{weather.current.temperature_2m}°C</h1>
                     <p className="text-gray-400 text-[16px]">
                         Max {weather.daily.temperature_2m_max[0]}°C - Min {weather.daily.temperature_2m_min[0]}°C

@@ -7,6 +7,7 @@ import Loader from "./components/loader.jsx";
 import { useDebounce } from 'use-debounce';
 import SevenDaysWeather from "./components/SevenDaysWeather.jsx";
 import UvCard from "./components/UvCard.jsx";
+import OtherCities from "./components/OtherCities.jsx";
 function App() {
     const [weather, setWeather] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -76,7 +77,7 @@ function App() {
 
     return (
         <div className="h-screen flex flex-wrap border">
-            <div className="px-2 md:w-[40%] w-full">
+            <div className="px-1 md:w-[40%] w-full">
                 <SearchBar setSearchCity={setSearchCity} />
                 {isLoading ? (
                     <Loader />
@@ -87,16 +88,18 @@ function App() {
                     </>
                 )}
             </div>
-            <div className="px-2 mt-2 md:w-[60%] w-full">
+            <div className="px-1 mt-2 md:w-[60%] w-full">
                 {isLoading ? (
                     <Loader />
                 ) : (
                     <>
                         <SevenDaysWeather weather={weather} />
-                        <UvCard weather={weather}/>
+                        <div className="flex md:flex-row flex-col">
+                            <UvCard weather={weather} />
+                            <OtherCities />
+                        </div>
                     </>
             )}
-
             </div>
         </div>
     );
