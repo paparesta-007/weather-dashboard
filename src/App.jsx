@@ -22,7 +22,7 @@ function App() {
     useEffect(() => {
         getWeather(locationStr);
         getOtherWeather();
-    }, []);
+    }, [locationStr]);
 
     useEffect(() => {
         if (debouncedSearch) {
@@ -35,7 +35,7 @@ function App() {
             const url = `https://api.opencagedata.com/geocode/v1/json?q=${city}&key=${import.meta.env.VITE_OPEN_CAGE_API_KEY}`;
             const response = await fetch(url);
             if (!response.ok) {
-                throw new Error("Something went wrong");
+                alert("Something went wrong");
             }
             const data = await response.json();
             const {lat, lng} = data.results[0].geometry;
@@ -115,7 +115,7 @@ function App() {
 
     return (
         <div className="h-screen flex flex-wrap border">
-            <div className="pl-4 mt-2 md:w-[40%] w-full">
+            <div className="pl-4 px-2 mt-2 md:w-[40%] w-full">
                 <SearchBar setSearchCity={setSearchCity} />
                 {isLoading ? (
                     <Loader />
@@ -126,7 +126,7 @@ function App() {
                     </>
                 )}
             </div>
-            <div className="px-4 mt-2 md:w-[60%] w-full">
+            <div className="pl-2 pr-4 mt-2 md:w-[60%] w-full">
                 {isLoading ? (
                     <Loader />
                 ) : (
