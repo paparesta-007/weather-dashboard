@@ -36,13 +36,11 @@ const weatherCodeToDescription = {
 
 const MainCard = ({ weather, locationCity }) => {
 
-    // Prendere l'icona in base al codice del tempo
     const iconName = weatherCodeToIcon[weather.current.weather_code] || "clear-day"; // default icon
     const iconUrl = `https://raw.githubusercontent.com/Makin-Things/weather-icons/main/animated/${iconName}.svg`;
     const oggi = new Date();
     const giornoSettimana = oggi.toLocaleString('en-US', { weekday: 'long' });
     const weatherDescription = weatherCodeToDescription[weather.current.weather_code] || "Unknown";
-    // 12 april
     const now= new Date();
     const month=now.toLocaleString('en-US', { month: 'long' });
     const day=now.getDate();

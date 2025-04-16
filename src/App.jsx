@@ -9,6 +9,7 @@ import SevenDaysWeather from "./components/SevenDaysWeather.jsx";
 import UvCard from "./components/UvCard.jsx";
 import OtherCities from "./components/OtherCities.jsx";
 import WeatherMap from "./components/WeatherMap.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
     const [weather, setWeather] = useState(null);
@@ -163,6 +164,7 @@ function App() {
                                <WeatherMap />
                            </div>
                        </div>
+                       <Footer/>
                    </div>
                )}
            </div>

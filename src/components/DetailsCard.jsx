@@ -17,9 +17,9 @@ const MainCard = ({ weather }) => {
 
     return (
         <div className="w-full p-6  h-auto rounded-lg bg-gradient-to-br card shadow-lg">
-            {/* Main content */}
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Left column */}
+
                 <div className="space-y-4">
                     <div className="border border-color   p-2 rounded-lg backdrop-blur-sm">
                         <div className="flex items-center text-blue-100 mb-2">
@@ -46,7 +46,6 @@ const MainCard = ({ weather }) => {
                     </div>
                 </div>
 
-                {/* Right column */}
                 <div className="space-y-4">
                     <div className="border border-color    p-2 rounded-lg backdrop-blur-sm">
                         <div className="flex items-center text-blue-100 mb-2">
