@@ -161,7 +161,7 @@ function App() {
                            </div>
 
                            <div className="card p-4 h-[400px]">
-                               <WeatherMap />
+                               <WeatherMap lat={weather.latitude} lon={weather.longitude}/>
                            </div>
                        </div>
                        <Footer/>
