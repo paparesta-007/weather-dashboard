@@ -47,7 +47,7 @@ const MainCard = ({ weather, locationCity }) => {
     const month=now.toLocaleString('en-US', { month: 'long' });
     const day=now.getDate();
     return (
-        <div className="w-[100%] my-2 p-4 rounded-md card">
+        <div className="w-[100%] h-auto my-2 p-4 rounded-md card">
             <div className="flex items-center justify-start">
                 <div className="flex items-center bg-gray-600/50 rounded-full px-4 py-2 backdrop-blur-sm">
                     <MapPin className="h-5 w-5 mr-2 text-white" />

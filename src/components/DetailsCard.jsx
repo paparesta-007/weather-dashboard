@@ -16,12 +16,12 @@ const MainCard = ({ weather }) => {
     const sunsetTime = weather.daily.sunset[0].slice(11, 16);
 
     return (
-        <div className="w-full p-6 my-4 h-auto rounded-lg bg-gradient-to-br card shadow-lg">
+        <div className="w-full p-6  h-auto rounded-lg bg-gradient-to-br card shadow-lg">
             {/* Main content */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left column */}
                 <div className="space-y-4">
-                    <div className="border border-gray-700  p-2 rounded-lg backdrop-blur-sm">
+                    <div className="border border-color   p-2 rounded-lg backdrop-blur-sm">
                         <div className="flex items-center text-blue-100 mb-2">
                             <Thermometer className="mr-2" />
                             <span className="font-medium">Apparent Temperature</span>
@@ -29,7 +29,7 @@ const MainCard = ({ weather }) => {
                         <p className="text-white text-2xl font-bold">{apparentTemp} {weather.current_units.apparent_temperature}</p>
                     </div>
 
-                    <div className="border border-gray-700   p-2 rounded-lg backdrop-blur-sm">
+                    <div className="border border-color    p-2 rounded-lg backdrop-blur-sm">
                         <div className="flex items-center text-blue-100 mb-2">
                             <Droplets className="mr-2" />
                             <span className="font-medium">Humidity</span>
@@ -37,7 +37,7 @@ const MainCard = ({ weather }) => {
                         <p className="text-white text-2xl font-bold">{humidity} {weather.current_units.relative_humidity_2m}</p>
                     </div>
 
-                    <div className="border border-gray-700   p-2 rounded-lg backdrop-blur-sm">
+                    <div className="border border-color   p-2 rounded-lg backdrop-blur-sm">
                         <div className="flex items-center text-blue-100 mb-2">
                             <Wind className="mr-2" />
                             <span className="font-medium">Wind Speed</span>
@@ -48,7 +48,7 @@ const MainCard = ({ weather }) => {
 
                 {/* Right column */}
                 <div className="space-y-4">
-                    <div className="border border-gray-700   p-2 rounded-lg backdrop-blur-sm">
+                    <div className="border border-color    p-2 rounded-lg backdrop-blur-sm">
                         <div className="flex items-center text-blue-100 mb-2">
                             <WindArrowDown className="mr-2" />
                             <span className="font-medium">Wind Direction</span>
@@ -56,7 +56,7 @@ const MainCard = ({ weather }) => {
                         <p className="text-white text-2xl font-bold">{windDirection}°</p>
                     </div>
 
-                    <div className="border border-gray-700   p-2 rounded-lg backdrop-blur-sm">
+                    <div className="border border-color    p-2 rounded-lg backdrop-blur-sm">
                         <div className="flex items-center text-blue-100 mb-2">
                             <SunMedium className="mr-2" />
                             <span className="font-medium">Sunrise</span>
@@ -64,7 +64,7 @@ const MainCard = ({ weather }) => {
                         <p className="text-white text-2xl font-bold">{sunriseTime}</p>
                     </div>
 
-                    <div className="border border-gray-700   p-2 rounded-lg backdrop-blur-sm">
+                    <div className="border border-color    p-2 rounded-lg backdrop-blur-sm">
                         <div className="flex items-center text-blue-100 mb-2">
                             <Moon className="mr-2" />
                             <span className="font-medium">Sunset</span>
@@ -76,7 +76,7 @@ const MainCard = ({ weather }) => {
 
             {/* Bottom row - full width */}
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 gap-2 mt-6">
-                <div className="border border-gray-700   p-2 rounded-lg backdrop-blur-sm">
+                <div className="border border-color    p-2 rounded-lg backdrop-blur-sm">
                     <div className="flex items-center text-blue-100 mb-2">
                         <Gauge className="mr-2" />
                         <span className="font-medium">Pressure</span>
@@ -84,7 +84,7 @@ const MainCard = ({ weather }) => {
                     <p className="text-white text-2xl font-bold">{pressure} {weather.current_units.surface_pressure}</p>
                 </div>
 
-                <div className="border border-gray-700   p-2 rounded-lg backdrop-blur-sm">
+                <div className="border border-color    p-2 rounded-lg backdrop-blur-sm">
                     <div className="flex items-center text-blue-100 mb-2">
                         <Eye className="mr-2" />
                         <span className="font-medium">UV index</span>

@@ -55,7 +55,7 @@ const SeveDaysWeather = ({ weather }) => {
     }
 
     return (
-        <div className="card flex flex-wrap  mt-2 items-center align-middle text-center justify-evenly gap-0">
+        <div className="card flex flex-wrap  mt-2 items-center align-middle text-center justify-between gap-0">
             {days.map((day, index) => {
                 // Ottieni il codice meteo per il giorno corrente
                 const weatherCode = weatherCodes[index];
@@ -63,7 +63,7 @@ const SeveDaysWeather = ({ weather }) => {
                 const dayOfWeek = new Date(day).toLocaleString('en-US', { weekday: 'long' });
                 const dayTime= new Date(day).toLocaleString('en-US', { day: 'numeric' });
                 return (
-                        <div key={index} className="day-card select-none p-2 rounded-lg">
+                        <div key={index} className="day-card select-none  rounded-lg">
                             <h1 className="font-bold text-white text-xl">{index == 0 ? "Today" : index == 1 ? "Tomorrow" : `${dayOfWeek} ${dayTime}`}</h1>
                             {/* Aggiungi l'icona basata sul codice meteo */}
                             <img
